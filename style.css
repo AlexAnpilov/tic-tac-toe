@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(4, 14, 145, 1), transparent 1px),
+    linear-gradient(90deg, rgba(4, 14, 145, 1), transparent 1px);
+  background-size: 30px 30px;
+}
+
+.result {
+  color: rgba(211, 9, 9, 0.767);
+  font-weight: bold;
+  font-size: 40px;
+  font-family: Arial;
+  height: 40px;
+}
+
+.game {
+  display: flex;
+  height: 420px;
+  width: 420px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  outline: black solid 2px;
+}
+.field {
+  height: 140px;
+  width: 140px;
+  border: black solid 2px;
+  cursor: pointer;
+}
+.field:hover {
+  background-color: rgba(104, 184, 104, 0.815);
+}
+
+.new-game {
+  border: none;
+  padding: 10px 16px;
+  background-color: rgba(41, 112, 41, 0.829);
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.circle {
+  height: 100%;
+  width: 100%;
+  stroke-dashoffset: 283;
+  stroke-dasharray: 283;
+  animation: draw 1s forwards;
+}
+
+.cross {
+  height: 100%;
+  width: 100%;
+}
+.first {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: draw 0.5s forwards;
+}
+
+.second {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: draw 0.5s 0.5s forwards;
+}
+
+.winner-line {
+  background-color: rgba(79, 222, 71, 0.767);
+}
+
+.new-game:hover {
+  background-color: rgb(94, 138, 28);
+  box-shadow: -2px 3px 36px 8px rgba(143, 41, 143, 1);
+}
+.new-game:active {
+  background-color: rgb(161, 19, 74);
+  box-shadow: -2px 3px 36px 8px rgb(41, 143, 118);
+}
